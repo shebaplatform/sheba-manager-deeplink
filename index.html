@@ -38,7 +38,7 @@
   <script>
     function openApp() {
       const url = new URL(window.location.href);
-      const path = url.pathname.replace('/app/redirect', '');
+      const path = url.pathname;
       const query = url.search;
       const deepLink = `launch.xyz.sheba.managerapp://open${path}${query}`;
       window.location.href = deepLink;
