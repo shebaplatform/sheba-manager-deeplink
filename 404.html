@@ -3,37 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Open App</title>
+  <title>Open in App</title>
   <style>
-    body {
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f9f9f9;
-      margin: 0;
-    }
-    .container {
-      text-align: center;
-    }
-    .btn {
-      padding: 12px 24px;
-      background-color: #007bff;
+    body { font-family: sans-serif; text-align: center; padding: 2rem; }
+    button {
+      padding: 12px 20px;
+      font-size: 18px;
+      background-color: #4CAF50;
       color: white;
-      font-size: 16px;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Open the App 4</h1>
-    <p>If the app doesn't open automatically, click below:</p>
-    <button class="btn" onclick="openApp()">Open App</button>
-  </div>
+  <h2>Open this link in the app</h2>
+  <button id="openAppBtn">Open App</button>
 
   <script>
     const url = new URL(window.location.href);
