@@ -1,49 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Open App</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: #f9f9f9;
-      margin: 0;
-    }
-    .container {
-      text-align: center;
-    }
-    .btn {
-      padding: 12px 24px;
-      background-color: #007bff;
-      color: white;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Open the App</h1>
-    <p>If the app doesn't open automatically, click below:</p>
-    <button class="btn" onclick="openApp()">Open App</button>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open App</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #f9f9f9;
+        margin: 0;
+      }
+      .container {
+        text-align: center;
+      }
+      .btn {
+        padding: 12px 24px;
+        background-color: #4ea776;
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img
+        src="appOrginalLogo.png"
+        alt="sheba manager logo"
+        style="max-width: 150px"
+      />
+      <h1>sheba manager</h1>
+      <p>"ওপেন অ্যাপ" বাটনে ক্লিক করে অ্যাপটি ওপেন করুন</p>
+      <button class="btn" onclick="openApp()">ওপেন অ্যাপ</button>
+    </div>
 
-  <script>
-    const url = new URL(window.location.href);
-    const path = url.pathname;
-    const query = url.search;
-    const deepLink = `launch.xyz.sheba.managerapp://open${path}${query}`;
+    <script>
+      const url = new URL(window.location.href);
+      const path = url.pathname;
+      const query = url.search;
+      const deepLink = `launch.xyz.sheba.managerapp://open${path}${query}`;
 
-    document.getElementById('openAppBtn').addEventListener('click', () => {
-      window.location.href = deepLink;
-    });
-  </script>
-</body>
+      document.getElementById("openAppBtn").addEventListener("click", () => {
+        window.location.href = deepLink;
+      });
+    </script>
+  </body>
 </html>
