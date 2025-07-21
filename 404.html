@@ -44,6 +44,8 @@
       const url = new URL(window.location.href);
       const path = url.pathname;
       const query = url.search;
+      console.log("Path:", path);
+      console.log("Query:", query);
       const deepLink = `launch.xyz.sheba.managerapp://open${path}${query}`;
 
       document.getElementById("openAppBtn").addEventListener("click", () => {
