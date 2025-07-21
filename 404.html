@@ -8,7 +8,8 @@
       body {
         font-family: sans-serif;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-between;
         align-items: center;
         height: 100vh;
         background: #f9f9f9;
@@ -16,6 +17,7 @@
       }
       .container {
         text-align: center;
+        padding-top: 50px;
       }
       .btn {
         padding: 12px 24px;
@@ -24,6 +26,18 @@
         font-size: 16px;
         border: none;
         border-radius: 8px;
+        cursor: pointer;
+      }
+      footer {
+        width: 100%;
+        background-color: #000;
+        padding: 16px 0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      footer img {
+        height: 50px;
         cursor: pointer;
       }
     </style>
@@ -40,6 +54,24 @@
       <button class="btn" onclick="openApp()">ওপেন অ্যাপ</button>
     </div>
 
+    <footer>
+      <a
+        href="https://play.google.com/store/apps/details?id=xyz.sheba.managerapp"
+        target="_blank"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+          alt="Get it on Google Play"
+        />
+      </a>
+      <a href="https://apps.apple.com/us/app/sheba-manager/id6738626092" target="_blank">
+        <img
+          src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+          alt="Download on the App Store"
+        />
+      </a>
+    </footer>
+
     <script>
       function openApp() {
         const url = new URL(window.location.href);
@@ -48,8 +80,6 @@
         const deepLink = `launch.xyz.sheba.managerapp://open${path}${query}`;
         window.location.href = deepLink;
       }
-
-      // Try auto open after delay
       setTimeout(openApp, 1000);
     </script>
   </body>
