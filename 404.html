@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Open in App</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; padding: 2rem; }
+    button {
+      padding: 12px 20px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Open this link in the app</h2>
+  <button id="openAppBtn">Open App</button>
+
+  <script>
+    const url = new URL(window.location.href);
+    const path = url.pathname.replace('/app/redirect', '');
+    const query = url.search;
+    const deepLink = `launch.xyz.sheba.managerapp://open${path}${query}`;
+
+    document.getElementById('openAppBtn').addEventListener('click', () => {
+      window.location.href = deepLink;
+    });
+  </script>
+</body>
+</html>
