@@ -30,22 +30,20 @@
 </head>
 <body>
   <div class="container">
-    <h1>Open the App</h1>
+    <h1>Open the App i</h1>
     <p>If the app doesn't open automatically, click below:</p>
     <button class="btn" onclick="openApp()">Open App</button>
   </div>
 
-  <script>
-    function openApp() {
-      const url = new URL(window.location.href);
-      const path = url.pathname;
-      const query = url.search;
-      const deepLink = `launch.xyz.sheba.managerapp://open${path}${query}`;
-      window.location.href = deepLink;
-    }
 
-    // Try auto open after delay
-    setTimeout(openApp, 1000);
+  <script>
+    const url = new URL(window.location.href);
+    const path = "/app";
+    const deepLink = `launch.xyz.sheba.managerapp://open${path}`;
+
+    document.getElementById('openAppBtn').addEventListener('click', () => {
+      window.location.href = deepLink;
+    });
   </script>
 </body>
 </html>
